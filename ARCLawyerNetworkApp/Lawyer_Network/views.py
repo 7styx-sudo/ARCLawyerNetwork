@@ -4,7 +4,7 @@ ARCnetwork_app = Blueprint('', __name__)
 
 @ARCnetwork_app.route('/')
 def index():
-	return render_template("home.html')
+	return render_template('home.html')
 @ARCnetwork_app.route('/about')
 def about():
 	return render_template('about.html')
