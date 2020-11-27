@@ -23,3 +23,6 @@ class Lawfirms(db.Model):
         self.genPhone = genPhone
         self.phone = phone
         self.address = address
+
+    def __repr__(self):
+        return f"The lawfirm name is {self.lawFirmName}"
