@@ -14,12 +14,12 @@ class lawfirms(db.Model):
     address = db.Column(db.Text)
 
     def __init__(self, lawFirmName, state, website, specialities, email, contactLink, genPhone, phone, address):
-    self.lawFirmName = lawFirmName
-    self.state = state
-    self.website = website
-    self.specialities = specialities
-    self.email = email
-    self.contactLink = contactLink
-    self.genPhone = genPhone
-    self.phone = phone
-    self.address = address
+        self.lawFirmName = lawFirmName
+        self.state = state
+        self.website = website
+        self.specialities = specialities
+        self.email = email
+        self.contactLink = contactLink
+        self.genPhone = genPhone
+        self.phone = phone
+        self.address = address
