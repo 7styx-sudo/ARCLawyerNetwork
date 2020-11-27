@@ -37,14 +37,14 @@
   </div>
 </nav>
     {% block content %}
-    
+
     {% endblock %}
 
 <footer>
  
   <p>Website created by Emily Simkovich</p>
   <p>arc.legalreferralnetwork@gmail.com</p>
-  <a href="home.html">Home</a>
+  <a href="{{ url_for('Lawyer_Network.index') }}">Home</a>
   <a href="directory.html">Directory</a>
   <a href="about.html">About</a>
 
