@@ -1,7 +1,47 @@
 
 
-.firstDiv{
-	width:1000px ;
+.card{
+	width:900px ;
 	margin: 0 auto;
-
  }
+.secolumn{
+width:450px;
+float:right;
+}
+
+.fircolumn{
+width:450px;
+float:left;
+}
+
+.buttons{
+
+width:900px;
+height:15%;
+margin: 0 auto;
+display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.separater{
+
+	width: 900px;
+	height: 85%;
+	margin: 0 auto;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+	
+}
+
+.btn{
+
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.more{
+	height: 10px;
+}
+
