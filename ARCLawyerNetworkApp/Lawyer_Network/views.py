@@ -30,7 +30,7 @@ def about():
 
 @Lawyer_Network_app.route('/directory')
 def directory():
-	return render_template('directory.html', lawFirmName =lawFirmName, state = state, website = website, specialities = specialities, email = email, contactLink = contactLink, genPhone = genPhone, phone1 = phone1, address1 = address1)
+	return render_template('directory.html')#lawFirmName =lawFirmName, state = state, website = website, specialities = specialities, email = email, contactLink = contactLink, genPhone = genPhone, phone1 = phone1, address1 = address1)
 #creates endpoint for the directory webpage 
 @Lawyer_Network_app.route('/lawyer-profile')
 def fpProfile():
