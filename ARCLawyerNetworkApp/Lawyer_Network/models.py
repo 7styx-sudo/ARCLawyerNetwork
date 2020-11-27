@@ -1,7 +1,7 @@
 from ARCLawyerNetworkApp import db
 
 
-class lawfirms(db.Model):
+class Lawfirms(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     lawFirmName = db.Column(db.Text)
     state = db.Column(db.Text)
