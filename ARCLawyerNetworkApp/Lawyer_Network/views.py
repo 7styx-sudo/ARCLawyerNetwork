@@ -1,5 +1,6 @@
 from flask import Flask, Blueprint, render_template
 from ARCLawyerNetworkApp.Lawyer_Network.models import Lawfirms
+from ARCLawyerNetworkApp import db,app
 
 Lawyer_Network_app = Blueprint('Lawyer_Network', __name__)
 '''
@@ -20,6 +21,11 @@ with open ('Website-Data-Lawyers.csv','r' ) as csv_files:
 	
 @Lawyer_Network_app.route('/')
 def index():
+	my_Lawfirms = Lawfirms('el paso law', 'texas', 'www.law.com', 'deportation defense', 'law@law.com', 'law.com/contact', 6105554455, 554433343, ' 101 texas drace, texas')
+	db.session.add(my_Lawfirms)
+	db.session.commit()
+	testdata= Lawfirms.query.get(1)
+	return f"law firm: {testdata}"
 	#allData = Lawfirms.query.all()
 	#return f"{allData}"
 	return render_template('home.html')
