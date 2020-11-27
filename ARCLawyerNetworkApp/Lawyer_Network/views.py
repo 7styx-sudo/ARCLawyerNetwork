@@ -20,8 +20,8 @@ with open ('Website-Data-Lawyers.csv','r' ) as csv_files:
 	
 @Lawyer_Network_app.route('/')
 def index():
-	allData = Lawfirms.query.all()
-	return f"{allData}"
+	#allData = Lawfirms.query.all()
+	#return f"{allData}"
 	return render_template('home.html')
 @Lawyer_Network_app.route('/about')
 def about():
