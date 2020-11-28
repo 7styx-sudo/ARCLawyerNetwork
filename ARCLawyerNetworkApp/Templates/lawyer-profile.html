@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" href="lawyer-profile.css">
-</head>
-<body>
+{%extends 'base.html' %}
+{%block content%}
 
-</body>
-</html>
+<!--<link rel="stylesheet" type= "text/css" href="{{url_for('static', filename= 'styles/styles.css') }}">-->
+
+<h1>Lawyer Firm Name</h1>
+<h2>States</h2>
+<h3>specialities</h3>
+<a href="{{ url_for('Lawyer_Network.claim') }}">Claim Profile</a>
+<p></p><!--spacer-->
+<h2>Additional Contact Information</h2>
+
+<div class= oddleft>
+	<p>email</p>
+	<p>address 1</p>
+	<p>phone 1</p>
+	<p>address 3</p>
+	<p>phone 3</p>
+	<p>address 5</p>
+	<p>phone 5</p>
+	<p>address 7</p>
+	<p>phone 7</p>
+	<p>address 9</p>
+	<p>phone 9</p>
+	<p>address 11</p>
+	<p>phone 11</p>
+</div>
+<div class= evenright>
+	<a href=  >Contact Form Link</a>
+	<p>address 2</p>
+	<p>phone 2</p>
+	<p>address 4</p>
+	<p>phone 4</p>
+	<p>address 6</p>
+	<p>phone 6</p>
+	<p>address 8</p>
+	<p>phone 8</p>
+	<p>address 10</p>
+	<p>phone 10</p>
+	<p>address 12</p>
+	<p>phone 12</p>
+
+</div>
+
+{% endblock %}

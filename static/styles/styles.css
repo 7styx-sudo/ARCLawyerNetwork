@@ -1,8 +1,8 @@
+/*directory.html*/
 .test
 {
 	background-color: red;
 }
-
 .card{
 	width:900px ;
 	margin: 0 auto;
@@ -10,13 +10,13 @@
 .secolumn{
 width:450px;
 float:right;
+overflow:hidden;
 }
-
 .fircolumn{
 width:450px;
 float:left;
+overflow:hidden;
 }
-
 .buttons{
 
 width:900px;
@@ -25,7 +25,6 @@ margin: 0 auto;
 display: flex;
   align-items: center;
   justify-content: center;
-
 
 }
 .separater{
@@ -38,7 +37,6 @@ display: flex;
   justify-content: center;
 	
 }
-
 .btn{
 
 	margin-left: 10%;
@@ -47,7 +45,40 @@ display: flex;
 .more{
 	height: 10px;
 }
+/*base.html*/
+.container1{
+	width: 33%;
+float: left;
+overflow:hidden;
+}
+.container2{
+	width:33%;
+	margin-left: 10%;
+	margin-right: 10%;	
+}
+.container3{
+	width:33%;
+float:right;
+overflow:hidden;
 
-.p{
+}
+.footer{
+	margin: 0 auto;
+}
+/*lawyer-profile.html*/
+.oddleft{
+width: 50%;
+float: left;
+overflow:hidden;
+}
+.evenright{
+width: 50%;
+float: right;
+overflow:hidden;
+}
+h1{
 	color:red;
+}
+p{
+	color: red;
 }
