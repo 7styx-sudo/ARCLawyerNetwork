@@ -1,5 +1,5 @@
-from flask import Flask, Blueprint, render_template
-from ARCLawyerNetworkApp.Lawyer_Network.models import Lawfirms
+from flask import Flask, Blueprint, render_template, request, redirect, url_for
+from ARCLawyerNetworkApp.Lawyer_Network.models import Lawfirms, States
 from ARCLawyerNetworkApp import db,app
 
 Lawyer_Network_app = Blueprint('Lawyer_Network', __name__)
@@ -19,10 +19,18 @@ with open ('Website-Data-Lawyers.csv','r' ) as csv_files:
 		address1 = link[9]'''
 
 	
-@Lawyer_Network_app.route('/')
+@Lawyer_Network_app.route('/', methods= ['GET','POST'])
 def index():
 	#allData = Lawfirms.query.all()
 	#return f"{allData}"
+	if request.method == 'POST':
+		lfsearch = request.form["lawfirm"]
+		ssearch = request.form["state"]
+		statesearch = States.query.filter_by(states= ssearch)
+		return redirect(url_for('Lawyer_Network.results', statesearch=statesearch))
+
+		return f"{lfsearch} {ssearch}"
+
 	return render_template('home.html')
 @Lawyer_Network_app.route('/about')
 def about():
@@ -45,3 +53,6 @@ def review():
 @Lawyer_Network_app.route('/create-profile')
 def create():
 	return render_template('create-profile.html')
+@Lawyer_Network_app.route('/results')
+def results():
+	return render_template('results.html')

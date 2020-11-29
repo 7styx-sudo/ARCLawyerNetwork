@@ -23,5 +23,14 @@ for index in length:
 	address = df.iloc[index]["Address 1"]
 	my_Lawfirms = Lawfirms(lawfirmname,state, website,specialities,email, contactLink,genPhone, phone, address)
 	db.session.add(my_Lawfirms)
+	db.session.commit()
+	state_association(state,lawfirmname)
 
-db.session.commit()
+#this function parses the states columns and makes association between each state and the lawfirm
+def state_association (input,input2):
+	stateslist = input.split(",")#splits states into a list by comma
+	currentfirm = Lawfirms.query.filter_by(lawFirmName= input2)#retriving current lawfirm record from search
+	for eachstate in stateslist:
+		currentstate = States.query.filter_by(states= eachstate)#searches states table for each state in list
+		currentstate.statesServed.append(currentfirm)
+		db.session.commit()

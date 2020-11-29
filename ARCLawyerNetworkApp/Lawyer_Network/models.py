@@ -37,3 +37,11 @@ class Lawfirms(db.Model):
 class States(db.Model):
     states_id = db.Column(db.Integer, primary_key=True)
     states = db.Column(db.String(20))
+
+    def __init__(self, states):
+        self.states = states
+
+    
+
+    def __repr__(self):
+        return f"The state is {self.states}"    
