@@ -2,7 +2,6 @@ from flask import Flask, Blueprint, render_template
 from flask import url_for
 from flask import send_from_directory
 from flask import request
-from utility_functions import *
 import os
 
 Users_app = Blueprint('Users', __name__)

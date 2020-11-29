@@ -1,7 +1,6 @@
 {%extends 'base.html' %}
 {%block content%}
 <head>
-	
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
 		<script>
 			function create_account() {
@@ -32,12 +31,10 @@
 						
 					}
 				}
-				
 				var formData = new formData();	
 				formData.append("username", document.getElementById('username').value);
 				formData.append("password", document.getElementById('password').value);
-				http.send(formData);
-				
+				http.send(formData);	
 			}
 		</script>
 </head>
@@ -67,7 +64,7 @@
 		  <label for="address">What is your firm's main address?</label><br>
 		  <input type="text" class="form-control"  id="address" placeholder="Address"><br><br>
 
- 		<p>Does your firm have any additional addresses?</p>
+ 	<!--	<p>Does your firm have any additional addresses?</p>
 		  <div class="form-check">
   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
   <label class="form-check-label" for="exampleRadios1">
@@ -79,7 +76,7 @@
   <label class="form-check-label" for="exampleRadios2">
     No
   </label>
-</div>
+</div>-->
 
 		  <input type="submit" value="Submit">
 
