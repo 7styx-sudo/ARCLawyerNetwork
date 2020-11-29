@@ -1,17 +1,24 @@
+
 from ARCLawyerNetworkApp import db
 
 
+serves = db.Table('serves',
+    db.Column('lawfirm_id', db.Integer, db.ForeignKey('lawfirms.lawfirm_id')),
+    db.Column('state_id', db.Integer, db.ForeignKey('states.states_id'))
+    )
+
 class Lawfirms(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    lawfirm_id = db.Column(db.Integer, primary_key=True)
     lawFirmName = db.Column(db.Text)
     state = db.Column(db.Text)
     website = db.Column(db.Text)
     specialities = db.Column(db.Text)
     email = db.Column(db.Text)
     contactLink = db.Column(db.Text)
-    genPhone = db.Column(db.Integer)
-    phone = db.Column(db.Integer)
+    genPhone = db.Column(db.Text)
+    phone = db.Column(db.Text)
     address = db.Column(db.Text)
+    serves = db.relationship('States', secondary=serves, backref= db.backref('statesServed', lazy = 'dynamic') )
 
     def __init__(self, lawFirmName, state, website, specialities, email, contactLink, genPhone, phone, address):
         self.lawFirmName = lawFirmName
@@ -28,16 +35,13 @@ class Lawfirms(db.Model):
         return f"The lawfirm name is {self.lawFirmName}"
 
 
-serves = db.Table('serves,'
-    db.column('lawyer_id', db.Integer, db.ForeignKey('lawyer.lawyer_id')),
-    db.column('state_id', db.Integer, db.ForeignKey('states.states_id'))
-    )
 
+''''
 class Lawyer(db.Model):
     lawyer_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
     subscriptions = db.relationship('state', secondary=serves, backref= db.backref('statesServed', lazy = dynamic) )
-
+'''
 class States(db.Model):
     states_id = db.Column(db.Integer, primary_key=True)
     states = db.Column(db.String(20))
