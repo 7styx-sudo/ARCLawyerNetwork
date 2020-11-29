@@ -34,14 +34,6 @@ class Lawfirms(db.Model):
     def __repr__(self):
         return f"The lawfirm name is {self.lawFirmName}"
 
-
-
-''''
-class Lawyer(db.Model):
-    lawyer_id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20))
-    subscriptions = db.relationship('state', secondary=serves, backref= db.backref('statesServed', lazy = dynamic) )
-'''
 class States(db.Model):
     states_id = db.Column(db.Integer, primary_key=True)
     states = db.Column(db.String(20))
