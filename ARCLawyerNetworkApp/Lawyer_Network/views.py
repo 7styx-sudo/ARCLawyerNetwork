@@ -23,6 +23,12 @@ with open ('Website-Data-Lawyers.csv','r' ) as csv_files:
 def index():
 	#allData = Lawfirms.query.all()
 	#return f"{allData}"
+
+	#currentstate = States.query.filter_by(states= "Texas").first_or_404()
+	#for x in currentstate:
+		#return f"{x.states}"
+	#currentstate = States.query.get(3)
+	#return f"{currentstate}"
 	if request.method == 'POST':
 		lfsearch = request.form["lawfirm"]
 		ssearch = request.form["state"]
