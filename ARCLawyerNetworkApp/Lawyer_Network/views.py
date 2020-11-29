@@ -42,3 +42,6 @@ def claim():
 @Lawyer_Network_app.route('/review-lawyer')
 def review():
 	return render_template('review-lawyer.html')
+@Lawyer_Network_app.route('/create-profile')
+def create():
+	return render_template('create-profile.html')

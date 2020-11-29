@@ -76,9 +76,16 @@ width: 50%;
 float: right;
 overflow:hidden;
 }
-h1{
-	color:red;
+
+/*home.html*/
+.testy{
+	color:green;
+
 }
-p{
-	color: red;
+.testy2{
+	color: blue;
 }
+
+/*about.html*/
+
+
