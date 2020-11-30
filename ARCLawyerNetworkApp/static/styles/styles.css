@@ -1,4 +1,4 @@
-/*directory.html*/
+/*home.html*/
 .test
 {
 	background-color: red;
@@ -17,14 +17,15 @@ width:450px;
 float:left;
 overflow:hidden;
 }
-.buttons{
+.buttons{ /*holds the buttons on the content card*/
 
 width:900px;
 height:15%;
 margin: 0 auto;
 display: flex;
-  align-items: center;
-  justify-content: center;
+align-items: center;
+justify-content: center;
+overflow:hidden;
 
 }
 .separater{
@@ -33,17 +34,28 @@ display: flex;
 	height: 85%;
 	margin: 0 auto;
 	display: flex;
-  align-items: center;
-  justify-content: center;
-	
+  	align-items: center;
+  	justify-content: center;
+	overflow:hidden;
 }
 .btn{
 
 	margin-left: 10%;
 	margin-right: 10%;
 }
-.more{
+.more{ /* button for See more contact information*/
 	height: 10px;
+}
+.jumbotron{
+	width:95%;
+}
+function toggleText() {
+  var text = document.getElementById("demo");
+  if (text.style.display === "none") {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
 }
 /*base.html*/
 .container1{
@@ -71,18 +83,6 @@ overflow:hidden;
 width: 50%;
 float: right;
 overflow:hidden;
-}
-
-/*home.html*/
-.testy{
-	color:green;
-
-}
-.testy2{
-	color: blue;
-}
-.jumbotron{
-	width:95%;
 }
 
 /*about.html*/

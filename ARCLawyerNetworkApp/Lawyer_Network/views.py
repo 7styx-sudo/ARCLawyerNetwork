@@ -51,9 +51,16 @@ def about():
 def directory():
 	return render_template('directory.html')#lawFirmName =lawFirmName, state = state, website = website, specialities = specialities, email = email, contactLink = contactLink, genPhone = genPhone, phone1 = phone1, address1 = address1)
 #creates endpoint for the directory webpage 
-@Lawyer_Network_app.route('/lawyer-profile')
+
+@Lawyer_Network_app.route('/lawyer-profile', methods= ['GET','POST'])
 def lprofile():
-	return render_template('lawyer-profile.html')
+	if request.method == 'POST':
+		lfsearch = request.form["lawfirm"]
+		ssearch = request.form["state"]
+		statesearch = States.query.filter_by(states= ssearch).first().statesServed
+	return render_template('lawyer-profile.html', statesearch=statesearch)
+	return f"{lfsearch} {ssearch}"
+
 @Lawyer_Network_app.route('/claim-profile')
 def claim():
 	return render_template('claim-profile.html')

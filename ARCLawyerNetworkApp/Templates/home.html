@@ -18,9 +18,42 @@
 
 {%for result in statesearch %}
 
-<p> {{result.lawFirmName}}</p>
+ <!--card to display results-->
+    	<div class="card">
+     	 <div class="card-body">
+        	<h3 class="card-title">{{result.lawFirmName}}</h3>      
+          <div class= separater><!--space between info and buttons -->
+
+            <div class= fircolumn>
+             <h6>{{result.genPhone}}</h6>
+              <h6>{{result.address}}</h6>
+             <h6>{{result.phone}}</h6>
+              <a href="{{ url_for('Lawyer_Network.lprofile') }}"class="more" class="btn btn-outline-primary1">See more contact information</a>
+             <p></p><!--spacer-->
+          </div>
+
+          <div class= secolumn> 
+           <h4>{{result.state}}</h4>
+           <p>{{result.specialities}}</p>
+          </div>
+        </div>
+        
+          <div class= buttons>
+        	<a href="{{result.website}}" class="btn btn-primary">View Website</a>
+
+        	<p id='demo' style='display: none'>{{result.email}}</p>     
+			<button type='button' class="btn btn-primary" onclick="toggleText()">Email</button>
+       		<a href="{{ url_for('Lawyer_Network.lprofile') }}" class="btn btn-primary">View Profile</a>
+        </div>
+      		</div>
+    	
+  </div>
+
+<p> </p>
 
 {%endfor%}
+
+
 
 
 {% endblock %}

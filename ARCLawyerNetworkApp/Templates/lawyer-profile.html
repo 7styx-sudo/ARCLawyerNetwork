@@ -2,18 +2,19 @@
 {%block content%}
 
 <!--<link rel="stylesheet" type= "text/css" href="{{url_for('static', filename= 'styles/styles.css') }}">-->
+{%for result in statesearch %}
 
-<h1>Lawyer Firm Name</h1>
-<h2>States</h2>
-<h3>specialities</h3>
+<h1>{{result.lawFirmName}}</h1>
+<h2>{{result.state}}</h2>
+<h3>{{result.specialities}}</h3>
 <a href="{{ url_for('Lawyer_Network.claim') }}">Claim Profile</a>
 <p></p><!--spacer-->
 <h2>Additional Contact Information</h2>
 
 <div class= oddleft>
-	<p>email</p>
-	<p>address 1</p>
-	<p>phone 1</p>
+	<p>{{result.email}}</p>
+	<p>{{result.address}}</p>
+	<p>{{result.phone}}</p>
 	<p>address 3</p>
 	<p>phone 3</p>
 	<p>address 5</p>
@@ -26,7 +27,7 @@
 	<p>phone 11</p>
 </div>
 <div class= evenright>
-	<a href=  >Contact Form Link</a>
+	<a href= {{result.contactLink}} >Contact Form Link on Website</a>
 	<p>address 2</p>
 	<p>phone 2</p>
 	<p>address 4</p>
@@ -41,5 +42,7 @@
 	<p>phone 12</p>
 
 </div>
+
+{%endfor%}
 
 {% endblock %}
