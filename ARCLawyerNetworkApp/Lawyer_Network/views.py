@@ -34,7 +34,9 @@ def index():
 	if request.method == 'POST':
 		lfsearch = request.form["lawfirm"]
 		ssearch = request.form["state"]
-		statesearch = States.query.filter_by(states= ssearch)
+		#currentstate = States.query.filter_by(states= eachstate).first()
+		statesearch = States.query.filter_by(states= ssearch).first().statesServed
+		#statesearch = statesearch.statesServed
 		#return redirect(url_for('Lawyer_Network.results', statesearch=statesearch))
 		return render_template('home.html', statesearch=statesearch)
 		return f"{lfsearch} {ssearch}"
@@ -63,4 +65,4 @@ def create():
 	return render_template('create-profile.html')
 @Lawyer_Network_app.route('/results')
 def results():
-	return render_template('results.html', statesearch=statesearch)
+	return render_template('results.html')
