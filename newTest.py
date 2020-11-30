@@ -1,5 +1,4 @@
 from ARCLawyerNetworkApp import db,app
-
 from ARCLawyerNetworkApp.Lawyer_Network.models import Lawfirms, States, serves
 #import numpy as np 
 import pandas as pd 
@@ -10,11 +9,17 @@ import pandas as pd
 
 #this function parses the states columns and makes association between each state and the lawfirm
 def state_association (input,input2):
-	stateslist = input.split(",")#splits states into a list by comma
-	currentfirm = Lawfirms.query.filter_by(lawFirmName= input2)#retriving current lawfirm record from search
+	stateslist = []
+	stateslist1 = input.split(",")#splits states into a list by comma
+	for item in stateslist1:
+		stateslist.append(item.strip())
+	#print(stateslist)
+
+	currentfirm = Lawfirms.query.filter_by(lawFirmName= input2).first()#retriving current lawfirm record from search
 	for eachstate in stateslist:
-		currentstate = States.query.filter_by(states= eachstate)#searches states table for each state in list
-		currentstate.statesServed.append(currentfirm)
+		currentstate = States.query.filter_by(states= eachstate).first()#searches states table for each state in list
+		if currentstate != None:
+			currentstate.statesServed.append(currentfirm)
 	db.session.commit()
 
 df = pd.read_csv('lawyerDataNew.csv')
@@ -27,8 +32,8 @@ for index in length:
 	specialities = df.iloc[index]["Specialities"]
 	email = df.iloc[index]["Consultation Email"]
 	contactLink = df.iloc[index]["Contact Form Link"]
-	genPhone = df.iloc[index][" General Phone Number"]
-	phone = df.iloc[index]["Phone Number 1"]
+	genPhone = df.iloc[index]["General Phone"]
+	phone = df.iloc[index]["Phone 1"]
 	address = df.iloc[index]["Address 1"]
 	my_Lawfirms = Lawfirms(lawfirmname,state, website,specialities,email, contactLink,genPhone, phone, address)
 	db.session.add(my_Lawfirms)

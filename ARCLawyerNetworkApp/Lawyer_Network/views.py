@@ -27,14 +27,16 @@ def index():
 	#currentstate = States.query.filter_by(states= "Texas").first_or_404()
 	#for x in currentstate:
 		#return f"{x.states}"
-	#currentstate = States.query.get(3)
+	currentstate = States.query.get(3)
 	#return f"{currentstate}"
+	#test = currentstate.stateServed()
+	#return f'{test}' 
 	if request.method == 'POST':
 		lfsearch = request.form["lawfirm"]
 		ssearch = request.form["state"]
 		statesearch = States.query.filter_by(states= ssearch)
-		return redirect(url_for('Lawyer_Network.results', statesearch=statesearch))
-
+		#return redirect(url_for('Lawyer_Network.results', statesearch=statesearch))
+		return render_template('home.html', statesearch=statesearch)
 		return f"{lfsearch} {ssearch}"
 
 	return render_template('home.html')
@@ -61,4 +63,4 @@ def create():
 	return render_template('create-profile.html')
 @Lawyer_Network_app.route('/results')
 def results():
-	return render_template('results.html')
+	return render_template('results.html', statesearch=statesearch)
