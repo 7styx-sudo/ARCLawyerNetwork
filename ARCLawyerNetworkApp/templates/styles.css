@@ -45,6 +45,11 @@ display: flex;
 .more{
 	height: 10px;
 }
+.jumbotron1{
+  background: url(Lawfirm3.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;	
+}
 
 
 /*base.html*/
@@ -69,12 +74,12 @@ overflow:hidden;
 }
 /*lawyer-profile.html*/
 .oddleft{
-width: 50%;
+width: 49%;
 float: left;
 overflow:hidden;
 }
 .evenright{
-width: 50%;
+width: 49%;
 float: right;
 overflow:hidden;
 }

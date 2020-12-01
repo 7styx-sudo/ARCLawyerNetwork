@@ -39,7 +39,7 @@ def index():
 		#statesearch = statesearch.statesServed
 		#return redirect(url_for('Lawyer_Network.results', statesearch=statesearch))
 		return render_template('home.html', statesearch=statesearch)
-		return f"{lfsearch} {ssearch}"
+		
 
 	return render_template('home.html')
 @Lawyer_Network_app.route('/about')
@@ -52,13 +52,11 @@ def directory():
 	return render_template('directory.html')#lawFirmName =lawFirmName, state = state, website = website, specialities = specialities, email = email, contactLink = contactLink, genPhone = genPhone, phone1 = phone1, address1 = address1)
 #creates endpoint for the directory webpage 
 
-@Lawyer_Network_app.route('/lawyer-profile', methods= ['GET','POST'])
-def lprofile():
-	if request.method == 'POST':
-		lfsearch = request.form["lawfirm"]
-		ssearch = request.form["state"]
-		statesearch = States.query.filter_by(states= ssearch).first().statesServed
-	return render_template('lawyer-profile.html', statesearch=statesearch)
+@Lawyer_Network_app.route('/lawyer-profile/<lawfirm_id>', methods= ['GET','POST'])
+def lprofile(lawfirm_id):
+	
+	currentlawfirm = Lawfirms.query.filter_by(lawfirm_id= lawfirm_id).first()
+	return render_template('lawyer-profile.html', result=currentlawfirm)
 	return f"{lfsearch} {ssearch}"
 
 @Lawyer_Network_app.route('/claim-profile')

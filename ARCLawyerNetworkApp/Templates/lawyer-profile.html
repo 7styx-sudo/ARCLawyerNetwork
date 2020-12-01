@@ -2,20 +2,26 @@
 {%block content%}
 
 <!--<link rel="stylesheet" type= "text/css" href="{{url_for('static', filename= 'styles/styles.css') }}">-->
-{%for result in statesearch %}
+
+<div class="jumbotron"><!--container-->
+
 
 <h1>{{result.lawFirmName}}</h1>
-<h2>{{result.state}}</h2>
-<h3>{{result.specialities}}</h3>
+<br>
+<h2>States Served:</h2>
+<h3>{{result.state}}</h3>
+<br>
+<h2>Specialities:</h2>
+<h4>{{result.specialities}}</h4>
 <a href="{{ url_for('Lawyer_Network.claim') }}">Claim Profile</a>
 <p></p><!--spacer-->
 <h2>Additional Contact Information</h2>
-
+<div class= container> 
 <div class= oddleft>
-	<p>{{result.email}}</p>
+	<p>{{result.email}}</p><!--calls the result from the database -->
 	<p>{{result.address}}</p>
 	<p>{{result.phone}}</p>
-	<p>address 3</p>
+	<!--<p>address 3</p>
 	<p>phone 3</p>
 	<p>address 5</p>
 	<p>phone 5</p>
@@ -24,11 +30,11 @@
 	<p>address 9</p>
 	<p>phone 9</p>
 	<p>address 11</p>
-	<p>phone 11</p>
+	<p>phone 11</p>-->
 </div>
 <div class= evenright>
-	<a href= {{result.contactLink}} >Contact Form Link on Website</a>
-	<p>address 2</p>
+	<a href= {{result.contactLink}} >Link Contact Form on Website</a>
+	<!--<p>address 2</p>Link
 	<p>phone 2</p>
 	<p>address 4</p>
 	<p>phone 4</p>
@@ -39,10 +45,9 @@
 	<p>address 10</p>
 	<p>phone 10</p>
 	<p>address 12</p>
-	<p>phone 12</p>
-
+	<p>phone 12</p>-->
+</div>
 </div>
 
-{%endfor%}
-
+</div>
 {% endblock %}
