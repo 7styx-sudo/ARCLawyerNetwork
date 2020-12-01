@@ -1,4 +1,4 @@
-/*directory.html*/
+/*home.html*/
 .test
 {
 	background-color: red;
@@ -45,6 +45,8 @@ display: flex;
 .more{
 	height: 10px;
 }
+
+
 /*base.html*/
 .container1{
 	width: 33%;
@@ -76,16 +78,6 @@ width: 50%;
 float: right;
 overflow:hidden;
 }
-
-/*home.html*/
-.testy{
-	color:green;
-
-}
-.testy2{
-	color: blue;
-}
-
 /*about.html*/
 
 
