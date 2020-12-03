@@ -8,11 +8,13 @@
 <h2>The Adoptee Rights Campaign</h2>
 <h1>The Lawyer Network</h1>
 <h3>Use the search bar below to search for immigration lawyers.</h3>
- <!--
+
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline" method = "post">
+    <div class= "searchdiv1" >
     <input class="form-control mr-sm-2" type="search" name = "lawfirm" placeholder="Law Firm" aria-label="Law Firm">
-   <input class="form-control mr-sm-2" type="search" name = "state" placeholder="State" aria-label="State">-->
+   <input class="form-control mr-sm-2" type="search" name = "state" placeholder="State" aria-label="State">
+ </div>
        <!--<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         States</a>
@@ -35,37 +37,13 @@
         </div>
       </li> -->
           
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-       
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          States
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+ <form class="form-inline my-2 my-lg-0">
+      <div class= "submitdiv2"> 
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-  </div>
+  </form>
 </nav>
-
-
+</div>
 
 
 {%for result in statesearch %}
@@ -101,7 +79,6 @@
     	
   </div>
 
-<p> </p>
 
 {%endfor%}
 

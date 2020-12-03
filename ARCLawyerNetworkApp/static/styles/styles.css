@@ -48,6 +48,7 @@ overflow:hidden;
 }
 .jumbotron{
 	width:95%;
+	background-color: ##4bb1bd!important;
 }
 function toggleText() {
   var text = document.getElementById("demo");
@@ -57,6 +58,15 @@ function toggleText() {
     text.style.display = "none";
   }
 }
+.searchdiv1{
+	float: left;
+
+}
+.submitdiv2{
+	float:right;
+
+}
+
 /*base.html*/
 .container1{
 	width: 33%;
