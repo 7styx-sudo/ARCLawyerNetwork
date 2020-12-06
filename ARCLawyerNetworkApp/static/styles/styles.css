@@ -66,7 +66,39 @@ function toggleText() {
 	float:right;
 
 }
+.picdiv{
+	float:right;
+}
 
+/*.textdiv{
+	float: left;
+}
+.topdiv{
+	width: 100%;
+	height: 85%;
+	margin: 0 auto;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+	overflow:hidden;
+	display: inline-block;
+    vertical-align: middle;
+}
+.bottomdiv{
+	width: 100%;
+	height: 15%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+	overflow:hidden;
+	display: inline-block;
+    vertical-align: middle;
+}*/
+.pic{
+	width: 100%;
+	height:100%;
+}
 /*base.html*/
 .container1{
 	width: 33%;
@@ -82,6 +114,9 @@ function toggleText() {
 }
 .footer{
 	margin: 0 auto;
+}
+.container0{
+	background-color: ##4bb1bd;
 }
 /*lawyer-profile.html*/
 .oddleft{

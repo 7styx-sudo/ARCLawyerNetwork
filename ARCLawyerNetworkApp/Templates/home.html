@@ -3,14 +3,20 @@
 {%block content%}
 
 <div class="jumbotron" class= jumbotron1>
-  <!--<img src="Lawfirm3.jpg">make picture background of jumbotron-->
-
+  <div class= "container0">
+<div class= "topdiv">
+<div class="picdiv">
+ <img src="../static/pictures/Lawfirm3.png" alt="../static/pcitures/Lawfirm2.jpg" class="pic">
+</div>
+<div class="textdiv">
 <h2>The Adoptee Rights Campaign</h2>
 <h1>The Lawyer Network</h1>
 <h3>Use the search bar below to search for immigration lawyers.</h3>
-
+</div>
+<div class= "bottom div">
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline" method = "post">
+
     <div class= "searchdiv1" >
     <input class="form-control mr-sm-2" type="search" name = "lawfirm" placeholder="Law Firm" aria-label="Law Firm">
    <input class="form-control mr-sm-2" type="search" name = "state" placeholder="State" aria-label="State">
@@ -44,6 +50,16 @@
   </form>
 </nav>
 </div>
+</div>
+</div>
+</form>
+</form>
+</nav>
+</div>
+</div>
+</div>
+</div>
+
 
 
 {%for result in statesearch %}
@@ -55,6 +71,8 @@
           <div class= separater><!--space between info and buttons -->
 
             <div class= fircolumn>
+              <a href="{{ url_for('Lawyer_Network.claim') }}"class="more" class="btn btn-outline-primary1">Claim Profile</a>
+              <p></p><!--spacer-->
              <h6>{{result.genPhone}}</h6>
               <h6>{{result.address}}</h6>
              <h6>{{result.phone}}</h6>
@@ -70,9 +88,10 @@
         
           <div class= buttons>
         	<a href="{{result.website}}" class="btn btn-primary">View Website</a>
+          <a href="{{result.contactLink}}" class="btn btn-primary">Email</a>
 
-        	<p id='demo' style='display: none'>{{result.email}}</p>     
-			<button type='button' class="btn btn-primary" onclick="toggleText()">Email</button>
+        	<!--<p id='demo' style='display: none'>{{result.contactLink}}</p>     
+			<button type='button' class="btn btn-primary" onclick="toggleText()">Email</button>-->
        		<a href="{{ url_for('Lawyer_Network.lprofile', lawfirm_id = result.lawfirm_id) }}" class="btn btn-primary">View Profile</a>
         </div>
       		</div>
