@@ -62,12 +62,8 @@ def lprofile(lawfirm_id):
 @Lawyer_Network_app.route('/claim-profile')
 def claim():
 	return render_template('claim-profile.html')
-@Lawyer_Network_app.route('/review-lawyer')
-def review():
-	return render_template('review-lawyer.html')
-@Lawyer_Network_app.route('/create-profile')
-def create():
-	return render_template('create-profile.html')
+
+
 @Lawyer_Network_app.route('/results')
 def results():
 	return render_template('results.html')
