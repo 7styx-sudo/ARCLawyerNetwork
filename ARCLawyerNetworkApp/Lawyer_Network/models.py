@@ -18,9 +18,14 @@ class Lawfirms(db.Model):
     genPhone = db.Column(db.Text)
     phone = db.Column(db.Text)
     address = db.Column(db.Text)
+    accountEmail = db.Column(db.Text)
+    password = db.Column(db.Text)
+    notes = db.Column(db.Text)
+
+
     serves = db.relationship('States', secondary=serves, backref= db.backref('statesServed', lazy = 'dynamic') )
 
-    def __init__(self, lawFirmName, state, website, specialities, email, contactLink, genPhone, phone, address):
+    def __init__(self, lawFirmName, state, website, specialities, email, contactLink, genPhone, phone, address, accountEmail, password, probono, notes ):
         self.lawFirmName = lawFirmName
         self.state = state
         self.website = website
@@ -30,6 +35,10 @@ class Lawfirms(db.Model):
         self.genPhone = genPhone
         self.phone = phone
         self.address = address
+        self.accountEmail = accountEmail    
+        self.password = password  
+        self.notes = notes
+
 
     def __repr__(self):
         return f"The lawfirm name is {self.lawFirmName}"

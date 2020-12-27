@@ -40,8 +40,47 @@
 </head>
 <div class="jumbotron">
 	<h1>Please fill out the form below to join the Referral Network</h1>
-<form action="javascript:;" onsubmit="create_account()">
-		  <label for="name">Law Firm Name:</label><br>
+<form action="javascript:;" onsubmit="create_account()", method="POST">
+	 
+	  {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+
+      {{ form.lawfirm.label }} 
+      {{ form.lawfirm() }}
+
+      {{ form.states.label }} 
+      {{ form.states() }}
+
+      {{ form.website.label }} 
+      {{ form.website() }}
+
+      {{ form.specialities.label }} 
+      {{ form.specialities() }}
+
+      {{ form.email.label }} 
+      {{ form.email() }}
+
+      {{ form.phone.label }} 
+      {{ form.phone() }}
+
+      {{ form.address.label }} 
+      {{ form.address() }}
+
+      {{ form.probono.label }} 
+      {{ form.probono() }}
+
+      {{ form.accountEmail.label }} 
+      {{ form.accountEmail() }}      
+
+      {{ form.password.label }} 
+      {{ form.password() }}
+
+      {{ form.confirmPassword.label }} 
+      {{ form.confirmPassword() }}
+
+      {{ form.submit() }}
+
+		  <!--<label for="name">Law Firm Name:</label><br>
 		  <input type="text" class="form-control"  id="name" aria-describedby="emailHelp" placeholder="Law Firm">
 		  <br><br>
 
@@ -75,7 +114,8 @@
 			 			 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
 			  <label class="form-check-label" for="exampleRadios2">
 			    No
-			  </label>
+			  </label>-->
+			</form>
 			</div>
 
 
@@ -91,14 +131,14 @@
   <label class="form-check-label" for="exampleRadios2">
     No
   </label>
-</div>-->
+</div>
 <br>
 		  <input type="submit" class="btn btn-primary" value="Submit">
 
 		</form>
 		<div id="create-status"></div>
 
-</div>
+</div>-->
 
 
 

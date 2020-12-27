@@ -1,9 +1,10 @@
-from flask import Flask, Blueprint, render_template, request, redirect, url_for
+from flask import Flask, Blueprint, render_template, request, redirect
 from flask import url_for
 from flask import send_from_directory
 from flask import request
 import os
-from ARCLawyerNetworkApp import db,app
+from ARCLawyerNetworkApp import db,app\
+from forms import AddLawyer	
 
 Users_app = Blueprint('Users', __name__)
 '''
@@ -17,12 +18,33 @@ def favicon():
 def login():
 	return render_template('login.html')
 
-@Lawyer_Network_app.route('/create-profile', methods= ['GET','POST'])
+@Users_app.route('/create-profile', methods= ['GET','POST'])
 def create():
+	form = AddLawyer()
+
+	if form.validate_on_submit():
+		lawfirmName = form.lawfirmName.data
+		state = form.state.data
+		website = form.website.data
+		specialities = form.specialities.data
+		email = form.email.data
+		genPhone = form.genPhone.data
+		address = form.address.data
+		probono = form.probono.data
+		accountEmail = form.accountEmail.data
+		password = form.password.data
+		notes = form.notes.data
+
+		new_lawyer = Lawyer('lawfirmName','state','website','specialities','email','genPhone','address','probono','accountEmail','password', 'notes' )   
+		db.session.add(new_lawyer)
+		db.session.commit()
+
+		return redirect(url_for('lawyer-profile'))	
+
 	return render_template('create-profile.html')
 #creates endpoint for the register webpage 
 
-@Lawyer_Network_app.route('/review-lawyer')
+@Users_app.route('/review-lawyer')
 def review():
 	return render_template('review-lawyer.html', methods= ['GET','POST'])
 
