@@ -19,7 +19,6 @@ class Lawfirms(db.Model):
     phone = db.Column(db.Text)
     address = db.Column(db.Text)
     accountEmail = db.Column(db.Text)
-    password = db.Column(db.Text)
     notes = db.Column(db.Text)
 
 

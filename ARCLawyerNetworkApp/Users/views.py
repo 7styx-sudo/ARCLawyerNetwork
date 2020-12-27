@@ -3,10 +3,11 @@ from flask import url_for
 from flask import send_from_directory
 from flask import request
 import os
-from ARCLawyerNetworkApp import db,app\
-from forms import AddLawyer	
+from ARCLawyerNetworkApp import db,app
+from ARCLawyerNetworkApp.Users.createProfileForm import AddLawyer	
 
 Users_app = Blueprint('Users', __name__)
+app.config['SECRET_KEY'] = 'mysecretkey'
 '''
 @app.route("/favicon.ico")
 def favicon():
@@ -41,7 +42,7 @@ def create():
 
 		return redirect(url_for('lawyer-profile'))	
 
-	return render_template('create-profile.html')
+	return render_template('create-profile.html', form = form)
 #creates endpoint for the register webpage 
 
 @Users_app.route('/review-lawyer')
