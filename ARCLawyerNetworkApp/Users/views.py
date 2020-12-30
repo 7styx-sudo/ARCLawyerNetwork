@@ -5,6 +5,7 @@ from flask import request
 import os
 from ARCLawyerNetworkApp import db,app
 from ARCLawyerNetworkApp.Users.createProfileForm import AddLawyer	
+from werkzeug.security import generate_password_hash
 
 Users_app = Blueprint('Users', __name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
@@ -33,10 +34,10 @@ def create():
 		address = form.address.data
 		probono = form.probono.data
 		accountEmail = form.accountEmail.data
-		password = form.password.data
+		password = generate_password_hash(form.password.data) 
 		notes = form.notes.data
 
-		new_lawyer = Lawyer('lawfirmName','state','website','specialities','email','genPhone','address','probono','accountEmail','password', 'notes' )   
+		new_lawyer = Lawyer(lawfirmName, state, website, specialities, email, genPhone, address, probono, accountEmail, password, notes)   
 		db.session.add(new_lawyer)
 		db.session.commit()
 
