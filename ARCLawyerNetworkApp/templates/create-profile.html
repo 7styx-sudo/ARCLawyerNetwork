@@ -45,7 +45,7 @@
 	  {# This hidden_tag is a CSRF security feature. #}
       {{ form.hidden_tag() }}
 
-      {{ form.lawfirm.label }} 
+      {{ form.lawfirm.label, class =  }} 
       {{ form.lawfirm() }}
 
       {{ form.states.label }} 
