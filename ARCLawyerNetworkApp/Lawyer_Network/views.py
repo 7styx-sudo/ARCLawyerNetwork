@@ -1,6 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, redirect, url_for
 from ARCLawyerNetworkApp.Lawyer_Network.models import Lawfirms, States
 from ARCLawyerNetworkApp import db,app
+from flask_login import login_user,login_required,logout_user
 
 Lawyer_Network_app = Blueprint('Lawyer_Network', __name__)
 '''
@@ -53,6 +54,7 @@ def directory():
 #creates endpoint for the directory webpage 
 
 @Lawyer_Network_app.route('/lawyer-profile/<lawfirm_id>', methods= ['GET','POST'])
+@login_required
 def lprofile(lawfirm_id):
 	
 	currentlawfirm = Lawfirms.query.filter_by(lawfirm_id= lawfirm_id).first()

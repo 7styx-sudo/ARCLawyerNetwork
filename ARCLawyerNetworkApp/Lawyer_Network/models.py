@@ -20,6 +20,7 @@ class Lawfirms(db.Model):
     address = db.Column(db.Text)
     accountEmail = db.Column(db.Text)
     notes = db.Column(db.Text)
+    password = db.Column(db.Text)
 
 
     serves = db.relationship('States', secondary=serves, backref= db.backref('statesServed', lazy = 'dynamic') )
@@ -35,7 +36,7 @@ class Lawfirms(db.Model):
         self.phone = phone
         self.address = address
         self.accountEmail = accountEmail    
-        self.password = password  
+        self.password = generate_password_hash(password)  
         self.notes = notes
 
 
