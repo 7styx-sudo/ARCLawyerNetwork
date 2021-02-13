@@ -29,4 +29,4 @@ class LoginForm(FlaskForm):
 				return True
 			else:
 				self.password.errors.append("Incorrect email or password")
-				return False	''
+				return False	'''
