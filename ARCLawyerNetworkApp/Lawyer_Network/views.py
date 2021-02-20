@@ -4,24 +4,13 @@ from ARCLawyerNetworkApp import db,app
 from flask_login import login_user,login_required,logout_user
 
 Lawyer_Network_app = Blueprint('Lawyer_Network', __name__)
-'''
-import csv
-with open ('Website-Data-Lawyers.csv','r' ) as csv_files:
-	csv_reader = csv.DictReader(csv_file)
-	for line in csv_DictReader:
-		lawFirmName = line[1] 
-		state = line[2]
-		website = line[3]
-		specialities = line[4]
-		email = line[5]
-		contactLink = link[6]
-		genPhone = link[7]
-		phone1 = link[8]
-		address1 = link[9]'''
 
-	
-@Lawyer_Network_app.route('/', methods= ['GET','POST'])
+@Lawyer_Network_app.route('/')
 def index():
+	return render_template('home.html')
+	
+@Lawyer_Network_app.route('/directory', methods= ['GET','POST'])
+def directory():
 	#allData = Lawfirms.query.all()
 	#return f"{allData}"
 
@@ -39,19 +28,14 @@ def index():
 		statesearch = States.query.filter_by(states= ssearch).first().statesServed
 		#statesearch = statesearch.statesServed
 		#return redirect(url_for('Lawyer_Network.results', statesearch=statesearch))
-		return render_template('home.html', statesearch=statesearch)
+		return render_template('directory.html', statesearch=statesearch)
 		
 
-	return render_template('home.html')
+	return render_template('directory.html')
 @Lawyer_Network_app.route('/about')
 def about():
 	return render_template('about.html')
 #creates endpoint for the About webpage 
-
-@Lawyer_Network_app.route('/directory')
-def directory():
-	return render_template('directory.html')#lawFirmName =lawFirmName, state = state, website = website, specialities = specialities, email = email, contactLink = contactLink, genPhone = genPhone, phone1 = phone1, address1 = address1)
-#creates endpoint for the directory webpage 
 
 @Lawyer_Network_app.route('/lawyer-profile/<lawfirm_id>', methods= ['GET','POST'])
 @login_required

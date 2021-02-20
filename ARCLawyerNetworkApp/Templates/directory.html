@@ -1,9 +1,104 @@
 {%extends "base.html"%}
 {%block content%}
-<!--<link rel="stylesheet" type= "text/css" href="{{url_for('static', filename= 'styles/styles.css') }}">-->
+
+<div class="jumbotron" class= jumbotron1>
+  <div class= "container0">
+<div class= "topdiv">
+<div class="picdiv">
+ <img src="../static/pictures/Lawfirm3.png" alt="../static/pcitures/Lawfirm2.jpg" class="pic">
+</div>
+<div class="textdiv">
+<h2>The Adoptee Rights Campaign</h2>
+<h1>The Lawyer Network</h1>
+<h3>Use the search bar below to search for immigration lawyers.</h3>
+</div>
+<div class= "bottom div">
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline" method = "post">
+
+    <div class= "searchdiv1" >
+    <input class="form-control mr-sm-2" type="search" name = "lawfirm" placeholder="Law Firm" aria-label="Law Firm">
+   <input class="form-control mr-sm-2" type="search" name = "state" placeholder="State" aria-label="State">
+ </div>
+       <!--<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        States</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Arizona</a>
+          <a class="dropdown-item" href="#">California</a>
+          <a class="dropdown-item" href="#">Florida</a>
+          <a class="dropdown-item" href="#">Georgia</a>
+          <a class="dropdown-item" href="#">Illinois</a>
+          <a class="dropdown-item" href="#">Maryland</a>
+          <a class="dropdown-item" href="#">Michigan</a>
+          <a class="dropdown-item" href="#">Minnesota</a>
+          <a class="dropdown-item" href="#">New Jersey</a>
+          <a class="dropdown-item" href="#">New York</a>
+          <a class="dropdown-item" href="#">Ohio</a>
+          <a class="dropdown-item" href="#">Pennsylvania</a>
+          <a class="dropdown-item" href="#">Texas</a>
+          <a class="dropdown-item" href="#">Virginia</a>
+          <a class="dropdown-item" href="#">Washington D.C.</a>
+        </div>
+      </li> -->
+          
+ <form class="form-inline my-2 my-lg-0">
+      <div class= "submitdiv2"> 
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </form>
+</nav>
+</div>
+</div>
+</div>
+</form>
+</form>
+</nav>
+</div>
+</div>
+</div>
+</div>
 
 
-<p></p><!--spacer-->
-<!--<div class="test"><p>Hello this is a test to see if the background turns red</p></div>-->
+
+{%for result in statesearch %}
+
+ <!--card to display results-->
+    	<div class="card">
+     	 <div class="card-body">
+        	<h3 class="card-title">{{result.lawFirmName}}</h3>      
+          <div class= separater><!--space between info and buttons -->
+
+            <div class= fircolumn>
+              <a href="{{ url_for('Lawyer_Network.claim') }}"class="more" class="btn btn-outline-primary1">Claim Profile</a>
+              <p></p><!--spacer-->
+             <h6>{{result.genPhone}}</h6>
+              <h6>{{result.address}}</h6>
+             <h6>{{result.phone}}</h6>
+              <a href="{{ url_for('Lawyer_Network.lprofile', lawfirm_id = result.lawfirm_id) }}"class="more" class="btn btn-outline-primary1">See more contact information</a>
+             <p></p><!--spacer-->
+          </div>
+
+          <div class= secolumn> 
+           <h4>{{result.state}}</h4>
+           <p>{{result.specialities}}</p>
+          </div>
+        </div>
+        
+          <div class= buttons>
+        	<a href="{{result.website}}" class="btn btn-primary">View Website</a>
+          <a href="{{result.contactLink}}" class="btn btn-primary">Email</a>
+
+        	<!--<p id='demo' style='display: none'>{{result.contactLink}}</p>     
+			<button type='button' class="btn btn-primary" onclick="toggleText()">Email</button>-->
+       		<a href="{{ url_for('Lawyer_Network.lprofile', lawfirm_id = result.lawfirm_id) }}" class="btn btn-primary">View Profile</a>
+        </div>
+      		</div>
+    	
+  </div>
+
+
+{%endfor%}
+
 
 {% endblock %}

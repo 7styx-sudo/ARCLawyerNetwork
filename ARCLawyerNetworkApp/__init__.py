@@ -14,6 +14,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__,template_folder='./templates',static_folder='./static')
 
+app.wsgi_app = SassMiddleware(app.wsgi_app,{'ARCLawyerNetworkApp':("static/styles", "static/styles", "/static/styles")})
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:emily@localhost/ARCdb'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:nurudeen@localhost/ARCdb'
