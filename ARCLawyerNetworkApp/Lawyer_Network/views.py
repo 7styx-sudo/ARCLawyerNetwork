@@ -11,27 +11,15 @@ def index():
 	
 @Lawyer_Network_app.route('/directory', methods= ['GET','POST'])
 def directory():
-	#allData = Lawfirms.query.all()
-	#return f"{allData}"
-
-	#currentstate = States.query.filter_by(states= "Texas").first_or_404()
-	#for x in currentstate:
-		#return f"{x.states}"
+	
 	currentstate = States.query.get(3)
-	#return f"{currentstate}"
-	#test = currentstate.stateServed()
-	#return f'{test}' 
 	if request.method == 'POST':
 		lfsearch = request.form["lawfirm"]
 		ssearch = request.form["state"]
-		#currentstate = States.query.filter_by(states= eachstate).first()
 		statesearch = States.query.filter_by(states= ssearch).first().statesServed
-		#statesearch = statesearch.statesServed
-		#return redirect(url_for('Lawyer_Network.results', statesearch=statesearch))
 		return render_template('directory.html', statesearch=statesearch)
-		
-
 	return render_template('directory.html')
+
 @Lawyer_Network_app.route('/about')
 def about():
 	return render_template('about.html')
