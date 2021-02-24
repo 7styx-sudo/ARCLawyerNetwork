@@ -38,47 +38,60 @@
 			}
 		</script>
 </head>
-<div class="jumbotron">
-	<h1>Please fill out the form below to join the Referral Network</h1>
+<div class="jumbotron big-banner">
+	
+	<h3 style="text-align:center;" class="card-title"><b>Join the Network</b></h3>
 <form action="javascript:;" onsubmit="create_account()", method="POST">
+<div class="wrapper">
+  <div class="card wrapper" style="width: 35rem;">
+    <div class="card-body">
+      <form method="POST">
+        <img class="center" src= "{{ url_for('static',filename='images/ARClogo.png') }}" width="90" height="70" alt="" loading="lazy">
+        <br>	
 	 
 	  {# This hidden_tag is a CSRF security feature. #}
       {{ form.hidden_tag() }}
 
-      {{ form.lawfirm.label, class =  }} 
-      {{ form.lawfirm() }}
+      {{ form.lawfirm.label}} 
+      {{ form.lawfirm(class= "form-control") }}
 
       {{ form.states.label }} 
-      {{ form.states() }}
+      {{ form.states(class= "form-control") }}
 
       {{ form.website.label }} 
-      {{ form.website() }}
+      {{ form.website(class= "form-control") }}
 
       {{ form.specialities.label }} 
-      {{ form.specialities() }}
+      {{ form.specialities(class= "form-control") }}
 
       {{ form.email.label }} 
-      {{ form.email() }}
+      {{ form.email(class= "form-control") }}
 
       {{ form.phone.label }} 
-      {{ form.phone() }}
+      {{ form.phone(class= "form-control") }}
 
       {{ form.address.label }} 
-      {{ form.address() }}
+      {{ form.address(class= "form-control") }}
 
       {{ form.probono.label }} 
-      {{ form.probono() }}
+      {{ form.probono(class= "form-control") }}
 
       {{ form.accountEmail.label }} 
-      {{ form.accountEmail() }}      
+      {{ form.accountEmail(class= "form-control") }}      
 
       {{ form.password.label }} 
-      {{ form.password() }}
+      {{ form.password(class= "form-control") }}
 
       {{ form.confirmPassword.label }} 
-      {{ form.confirmPassword() }}
+      {{ form.confirmPassword(class= "form-control") }}
+      <br>
+      {{ form.submit(class= "btn btn-primary") }}
 
-      {{ form.submit() }}
+    </div>
+  </div>
+</div>
+      
+
 
 		  <!--<label for="name">Law Firm Name:</label><br>
 		  <input type="text" class="form-control"  id="name" aria-describedby="emailHelp" placeholder="Law Firm">

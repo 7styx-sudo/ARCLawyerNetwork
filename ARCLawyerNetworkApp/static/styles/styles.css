@@ -1,4 +1,4 @@
-/*home.html*/
+/*directory.html*/
 .test
 {
 	background-color: red;
@@ -46,9 +46,10 @@ overflow:hidden;
 .more{ /* button for See more contact information*/
 	height: 10px;
 }
-.jumbotron{
-	width:95%;
-	background-color: ##4bb1bd!important;
+.big-banner{
+	background-size: 95%;
+	background-image: url('../images/blueb.png');
+	height:s 90%;
 }
 function toggleText() {
   var text = document.getElementById("demo");
@@ -102,7 +103,7 @@ function toggleText() {
 /*base.html*/
 .container1{
 	width: 33%;
-
+}
 .container2{
 	width:33%;
 	
@@ -110,13 +111,17 @@ function toggleText() {
 .container3{
 	width:33%;
 
-
 }
 .footer{
 	margin: 0 auto;
 }
 .container0{
-	background-color: ##4bb1bd;
+	background-color: #4bb1bd;
+}
+.backcolor{
+	background-color:#BA6845;
+	/*#BA6845 #AADBE6*/
+
 }
 /*lawyer-profile.html*/
 .oddleft{
@@ -130,6 +135,22 @@ float: right;
 overflow:hidden;
 }
 
+/*home.html*/
+.sizer{
+	width:85%;
+}
+.tst{
+	color: black; 
+}
 /*about.html*/
 
+.big-banner2{
 
+	background-size: 95%;
+	background-image: url('../images/greenb.png');
+}
+/*create-profile.html*/
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+  }

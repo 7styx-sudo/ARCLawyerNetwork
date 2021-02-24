@@ -1,21 +1,30 @@
 {%extends 'base.html' %}
 {%block content%}
 
-<div class="jumbotron">
+<div class="jumbotron big-banner2">
+
 <h2>This Network was created for a Girl Scout Gold Award Project by Emily Simkovich of Troop 57087 in partnership with the Adoptee Rights Campaign.</h2>
 <br>
 <br>
 <h2> The Adoptee Rights Campaign is a diverse group of advocates whose vision is full citizenship status for all intercountry adoptees. For more information please visit their website <a href="https://adopteerightscampaign.org/">adopteerightscampaign.org</a>. </h2>
 <br>
 <br>
-<h2>To join the legal referral network please fill out the form <a href="{{ url_for('Lawyer_Network.create') }}">here</a>.</h2>
+<h2>To join the legal referral network please fill out the form <a href="{{ url_for('Users.create') }}">here</a>.</h2>
 <br>
 <br>
 <h2>For inquries about the Lawyer Network, please email arc.legalreferralnetwork@gmail.com </h2>
 <br>
 <br>
 <h2>For inquries about the Adoptee Rights Campaign, please email info@adopteerightscampaign.org</h2>
+         
+<img src="{{ url_for('static',filename='images/goldawardlogo.png') }}"width="150" height="150" alt="" loading="lazy">
+<img src="{{ url_for('static',filename='images/gseplogo.png') }}"width="300" height="175" alt="" loading="lazy">
+<img src="{{ url_for('static',filename='images/ARClogo.png') }}" loading="lazy">
+
+
 </div>
+
+
 
 
 

@@ -1,13 +1,12 @@
 {%extends "base.html"%}
 {%block content%}
 
-<div class="jumbotron" class= jumbotron1>
+<div class="jumbotron big-banner">
   <div class= "container0">
 <div class= "topdiv">
 <div class="picdiv">
- <img src="../static/pictures/Lawfirm3.png" alt="../static/pcitures/Lawfirm2.jpg" class="pic">
 </div>
-<div class="textdiv">
+<div class="textdiv big-banner">
 <h2>The Adoptee Rights Campaign</h2>
 <h1>The Lawyer Network</h1>
 <h3>Use the search bar below to search for immigration lawyers.</h3>
@@ -16,9 +15,10 @@
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline" method = "post">
 
+            
     <div class= "searchdiv1" >
     <input class="form-control mr-sm-2" type="search" name = "lawfirm" placeholder="Law Firm" aria-label="Law Firm">
-   <input class="form-control mr-sm-2" type="search" name = "state" placeholder="State" aria-label="State">
+   <input class="form-control mr-sm-2" type="search" name = "state" placeholder="Capitalized State Name" aria-label="State">
  </div>
        <!--<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,9 +64,9 @@
 {%for result in statesearch %}
 
  <!--card to display results-->
-    	<div class="card">
-     	 <div class="card-body">
-        	<h3 class="card-title">{{result.lawFirmName}}</h3>      
+      <div class="card">
+       <div class="card-body">
+          <h3 class="card-title">{{result.lawFirmName}}</h3>      
           <div class= separater><!--space between info and buttons -->
 
             <div class= fircolumn>
@@ -86,19 +86,21 @@
         </div>
         
           <div class= buttons>
-        	<a href="{{result.website}}" class="btn btn-primary">View Website</a>
+          <a href="{{result.website}}" class="btn btn-primary">View Website</a>
           <a href="{{result.contactLink}}" class="btn btn-primary">Email</a>
 
-        	<!--<p id='demo' style='display: none'>{{result.contactLink}}</p>     
-			<button type='button' class="btn btn-primary" onclick="toggleText()">Email</button>-->
-       		<a href="{{ url_for('Lawyer_Network.lprofile', lawfirm_id = result.lawfirm_id) }}" class="btn btn-primary">View Profile</a>
+          <!--<p id='demo' style='display: none'>{{result.contactLink}}</p>     
+      <button type='button' class="btn btn-primary" onclick="toggleText()">Email</button>-->
+          <a href="{{ url_for('Lawyer_Network.lprofile', lawfirm_id = result.lawfirm_id) }}" class="btn btn-primary">View Profile</a>
         </div>
-      		</div>
-    	
+          </div>
+      
   </div>
 
 
 {%endfor%}
 
+<p></p><!--spacer-->
+<!--<div class="test"><p>Hello this is a test to see if the background turns red</p></div>-->
 
 {% endblock %}

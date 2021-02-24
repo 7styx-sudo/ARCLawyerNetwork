@@ -10,7 +10,7 @@ class AddLawyer(FlaskForm):
 	email = StringField(u'What email should potential clients use to contact you?',[validators.optional()])
 	phone = StringField(u'What phone number should potential clients use to contact you?',[validators.required()])
 	address = StringField(u"Please list your firm's full main address.", [validators.required()])
-	probono = RadioField(u"Will your firm offer pro-bono or low-bono services?", [validators.required()])
+	probono = StringField(u"Will your firm offer pro-bono or low-bono services?", [validators.required()])
 	accountEmail = StringField(u"Please list the email you would like to be associated with this profile",[validators.required()])
 	password = StringField(u'Password:', [validators.required()])
 	confirmPassword = StringField(u'Confirm Password:', [validators.required()])
